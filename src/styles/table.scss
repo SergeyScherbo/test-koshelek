@@ -1,0 +1,49 @@
+.table {
+	&__row {
+		display: flex;
+		border-bottom: 1px solid #eee;
+		transition: .3s;
+
+		&--head {
+			position: sticky;
+			top: 0;
+			border-bottom: 1px solid #ccc;
+			font-weight: bold;
+		}
+
+		&--updated {
+			background-color: #eee;
+		}
+
+		&:last-child {
+			border: none;
+		}
+
+		&:hover {
+			&:not(.table__row--head) {
+				background-color: #f8f8f8;
+			}
+		}
+	}
+
+	&__cell {
+		flex: 1;
+		padding: 15px 10px;
+
+		&:last-child {
+			text-align: right;
+		}
+
+		&--hideMobile {
+			@media screen and (max-width: 768px) {
+				display: none;
+			}
+		}
+
+		&--mobileRight {
+			@media screen and (max-width: 768px) {
+				text-align: right;
+			}
+		}
+	}
+}
